@@ -10,6 +10,9 @@
 [![Python](https://img.shields.io/badge/Python-00BCD4?style=for-the-badge&logo=python&logoColor=white&labelColor=101010)]()
 [![Java](https://img.shields.io/badge/Java-red?style=for-the-badge&logo=java&logoColor=white&labelColor=101010)]()
 
+![IlhamNet github stats](https://github-readme-stats.vercel.app/api?username=IlhamNet&show_icons=true&theme=tokyonight)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=IlhamNet&hide=css,html&theme=tokyonight)
 
  ### Api's Ilham_Net
 
