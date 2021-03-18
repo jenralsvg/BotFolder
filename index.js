@@ -1154,6 +1154,22 @@ case 'wait':
 					}
 					await limitAdd(sender)
 					break
+case 'wa.me':
+case 'wame':
+  					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+  					if (isLimit(sender)) return reply(ind.limitend(pusname))
+  					death.updatePresence(from, Presence.composing) 
+  					options = {
+  					text: `「 *SELF WHATSAPP* 」\n\n_Request by_ : *@${sender.split("@s.whatsapp.net")[0]}\n\nYour link WhatsApp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*Or ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
+  					contextInfo: { mentionedJid: [sender] }
+  					}
+  					death.sendMessage(from, options, text, { quoted: net } )
+  					break
+  					if (data.error) return reply(data.error)
+  					reply(data.result)
+					await limitAdd(sender)
+  					break
 case 'iri':
 const irimp3 = fs.readFileSync('./assets/iri.mp3');
 death.sendMessage(from, irimp3, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
