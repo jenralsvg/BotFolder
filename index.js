@@ -878,43 +878,43 @@ death.on('group-participants-update', async (anu) => {
 
 			
 case 'iri':
-const irimp3 = fs.readFileSync('./assets/iri.mp3');
+const irimp3 = fs.readFileSync('./mp3/iri.mp3');
 death.sendMessage(from, irimp3, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'pale':
-const pa = fs.readFileSync('assets/pale.mp3')
+const pa = fs.readFileSync('./mp3/pale.mp3')
 death.sendMessage(from, pa, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound':
-const soun = fs.readFileSync('assets/sound.mp3')
+const soun = fs.readFileSync('./mp3/sound.mp3')
 death.sendMessage(from, soun, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break 
 case 'sound1':
-satu = fs.readFileSync('./assets/sound1.mp3');
+satu = fs.readFileSync('./mp3/sound1.mp3');
 death.sendMessage(from, satu, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound2':
-dua = fs.readFileSync('./assets/sound2.mp3');
+dua = fs.readFileSync('./mp3/sound2.mp3');
 death.sendMessage(from, dua, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound3':
-tiga = fs.readFileSync('./assets/sound3.mp3');
+tiga = fs.readFileSync('./mp3/sound3.mp3');
 death.sendMessage(from, tiga, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound4':
-empat = fs.readFileSync('./assets/sound4.mp3');
+empat = fs.readFileSync('./mp3/sound4.mp3');
 death.sendMessage(from, empat, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound5':
-lima = fs.readFileSync('./assets/sound5.mp3');
+lima = fs.readFileSync('./mp3/sound5.mp3');
 death.sendMessage(from, lima, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound6':
-enam = fs.readFileSync('./assets/sound6.mp3');
+enam = fs.readFileSync('./mp3/sound6.mp3');
 death.sendMessage(from, enam, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound7':
-tujuh = fs.readFileSync('./assets/sound7.mp3');
+tujuh = fs.readFileSync('./mp3/sound7.mp3');
 death.sendMessage(from, tujuh, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break									
 //daftar 
