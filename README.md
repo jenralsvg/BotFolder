@@ -2,7 +2,9 @@
 
 - 🌱 I’m currently learning **nothing**.
 - 👀 I m currently focusing on **JavaScript**.
-- 📝 I m currently working on [`IlhamNet APIs`](https://ilham-net.herokuapp/) 
+<p align='center'>
+   <a href="https://wa.me/6285757196471"><img height="30" src="https://c.top4top.io/p_1837yybbf0.jpeg"></a>&nbsp;&nbsp;
+</P>
 
 <p align="center">
   <img src="https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript" />
@@ -20,20 +22,15 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jenralsvg"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=IlhamNet&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
+  <a href="https://github.com/jenralsvg"><img src="https://github-readme-statsvercel.app/api/top-langs?username=IlhamNet&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
 </p>
 
 <p align="center">
-  <a href="https://youtu.be/WgeItwiifYs"><img src="https://img.shields.io/badge/YouTube-iLham_Net-ff0000?style=for-the-badge&logo=youtube&logoColor=ff0000&link=https://youtu.be/WgeItwiifYs" /></a>
+  <a href="https://youtu.be/WgeItwiifYs"><img src="https://img.shields.io/badge/YouTube-ff0000?style=for-the-badge&logo=youtube&logoColor=ff0000&link=https://youtu.be/WgeItwiifYs" /></a>
   <a name=hendra759&label=VIEWS&style=flat-square&color=orange" />
 
 </p> 
- #sosial media
-
-<p align='center'>
-   <a href="https://wa.me/6285757196471"><img height="30" src="https://c.top4top.io/p_1837yybbf0.jpeg"></a>&nbsp;&nbsp;
-   <a href="https://instagram.com/zhirr_ajalah"><img height="30" src="https://raw.githubusercontent.com/TobyG74/TobyG74/main/instagram.jpg"></a>
-</P>
-
+ # Api's Ilham_Net
+ 
 * [`IlhamNet APIs `](https://ilham-net.herokuapp/)
 
