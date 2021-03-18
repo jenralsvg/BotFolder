@@ -4,7 +4,7 @@
 
 - 👀 I m currently focusing on **JavaScript**.
 
-- 📝 I m currently working on [`Ilham_NetAPIs`](https://ilham-net.herokuapp/) 
+- 📝 I m currently working on [`IlhamNet APIs`](https://ilham-net.herokuapp/) 
 
 <p align="center">
   <img src="https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript" />
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ItsmeikyXSec4O4"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=ItsmeikyXSec4O4&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
+  <a href="https://github.com/jenralsvg"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=IlhamNet&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
 </p>
 
 <p align="center">
