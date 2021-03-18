@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jenralsvg"><img src="https://github-readme-statsvercel.app/api/top-langs?username=IlhamNet&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
+  <a href="https://github.com/jenralsvg"><img src="https://github-readme-stats7vercel.app/api/top-langs?username=IlhamNet&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
 </p>
 
 <p align="center">
