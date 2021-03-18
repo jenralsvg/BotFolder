@@ -22,10 +22,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ItsmeikyXSec4O4"><img src="https://github-readme-stats.vercel.app/api?username=ItsmeikyXSec4O4&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&icon_color=fff&hide_border=true&show_icons=true" /></a>
-</p>
-
-<p align="center">
   <a href="https://github.com/ItsmeikyXSec4O4"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=ItsmeikyXSec4O4&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
 </p>
 
