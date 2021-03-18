@@ -985,8 +985,7 @@ case 'daftar':
 				
 				
 				
-				
-	case 'nsfw':
+case 'nsfw':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
@@ -1142,18 +1141,3 @@ case 'wait':
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})
-
-							
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-											
-  						
-				
