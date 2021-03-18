@@ -1,9 +1,7 @@
 <h1 align="center">Ilham_Net <img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width="40px" alt="hi"><br>My Name Mohamad Ilham</h1>
 
 - 🌱 I’m currently learning **nothing**.
-
 - 👀 I m currently focusing on **JavaScript**.
-
 - 📝 I m currently working on [`IlhamNet APIs`](https://ilham-net.herokuapp/) 
 
 <p align="center">
@@ -32,8 +30,10 @@
 </p> 
  #sosial media
 
-
-* [`WhatsApp Admin `](https://wa.me/6285757196481)
+<p align='center'>
+   <a href="https://wa.me/6285757196471"><img height="30" src="https://c.top4top.io/p_1837yybbf0.jpeg"></a>&nbsp;&nbsp;
+   <a href="https://instagram.com/zhirr_ajalah"><img height="30" src="https://raw.githubusercontent.com/TobyG74/TobyG74/main/instagram.jpg"></a>
+</P>
 
 * [`IlhamNet APIs `](https://ilham-net.herokuapp/)
 
