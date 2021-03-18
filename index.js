@@ -986,19 +986,7 @@ case 'daftar':
 				
 				
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-											
-case 'nsfw':
+	case 'nsfw':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
@@ -1059,7 +1047,7 @@ case 'antilink':
 						antilink.push(from)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
 						reply('Sukses mengaktifkan [ ✓ ] anti link di group ini')
-						itsmeiky.sendMessage(from,`Perhatian kepada seluruh member anti link group aktif apabila anda mengirim link group anda akan di kick dari group`, text)
+						death.sendMessage(from,`Perhatian kepada seluruh member anti link group aktif apabila anda mengirim link group anda akan di kick dari group`, text)
 					} else if (Number(args[0]) === 0) {
 						if (!isAntilink) return reply('Mode anti link group sudah disable [ ✓ ]')
 						antilink.splice(from, 1)
@@ -1107,13 +1095,13 @@ case 'clone':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerg()) 
 					if (args.length < 1) return reply(' *TAG Yang Mau Di CLONE!!!* ')
-					if (iky.message.extendedTextMessage === undefined || iky.message.extendedTextMessage === null) return reply('❬ SUCCSESS ❭')
-					mentioned = iky.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					if (net.message.extendedTextMessage === undefined || net.message.extendedTextMessage === null) return reply('❬ SUCCSESS ❭')
+					mentioned = net.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
 					try {
-						pp = await itsmeiky.getProfilePicture(id)
+						pp = await death.getProfilePicture(id)
 						buffer = await getBuffer(pp)
-						itsmeiky.updateProfilePicture(botNumber, buffer)
+						death.updateProfilePicture(botNumber, buffer)
 						mentions(`Foto profile Berhasil di perbarui menggunakan foto profile @${id.split('@')[0]}`, [jid], true)
 					} catch (e) {
 						reply(ind.stikga())
@@ -1122,12 +1110,12 @@ case 'clone':
 					break
 case 'wait':
 					if (!isPremium) return reply('Maaf kamu bukan user premium!')
-					if ((isMedia && !iky.message.videoMessage || isQuotedImage) && args.length == 0) {
+					if ((isMedia && !net.message.videoMessage || isQuotedImage) && args.length == 0) {
 						reply(ind.wait())
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(iky).replace('quotedM','m')).message.extendedTextMessage.contextInfo : iky
-						media = await itsmeiky.downloadMediaMessage(encmedia)
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(net).replace('quotedM','m')).message.extendedTextMessage.contextInfo : net
+						media = await death.downloadMediaMessage(encmedia)
 						await wait(media).then(res => {
-							itsmeiky.sendMessage(from, res.video, video, {quoted: iky, caption: res.teks.trim()})
+							death.sendMessage(from, res.video, video, {quoted: net, caption: res.teks.trim()})
 						}).catch(err => {
 							reply(err)
 						})
@@ -1155,4 +1143,17 @@ case 'wait':
 		}
 	})
 
+							
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+											
+  						
 				
