@@ -907,46 +907,77 @@ case 'katailham':
 			
 case 'iri':
 const irimp3 = fs.readFileSync('./assets/iri.mp3');
-enzet.sendMessage(from, irimp3, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, irimp3, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'pale':
 const pa = fs.readFileSync('assets/pale.mp3')
-enzet.sendMessage(from, pa, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, pa, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound':
 const soun = fs.readFileSync('assets/sound.mp3')
-enzet.sendMessage(from, soun, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, soun, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break 
 case 'sound1':
 satu = fs.readFileSync('./assets/sound1.mp3');
-enzet.sendMessage(from, satu, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, satu, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound2':
 dua = fs.readFileSync('./assets/sound2.mp3');
-enzet.sendMessage(from, dua, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, dua, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound3':
 tiga = fs.readFileSync('./assets/sound3.mp3');
-enzet.sendMessage(from, tiga, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, tiga, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound4':
 empat = fs.readFileSync('./assets/sound4.mp3');
-enzet.sendMessage(from, empat, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, empat, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound5':
 lima = fs.readFileSync('./assets/sound5.mp3');
-enzet.sendMessage(from, lima, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, lima, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound6':
 enam = fs.readFileSync('./assets/sound6.mp3');
-enzet.sendMessage(from, enam, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, enam, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound7':
 tujuh = fs.readFileSync('./assets/sound7.mp3');
-enzet.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+death.sendMessage(from, tujuh, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break									
-				
-				
+//daftar 
+case 'daftar':
+                			if (isRegistered) return  reply(ind.rediregis())
+                			if (!q.includes('|')) return  reply(ind.wrongf())
+                			const namaUser = q.substring(0, q.indexOf('|') - 0)
+                			const umurUser = q.substring(q.lastIndexOf('|') + 1)
+                			const serialUser = createSerial(20)
+                			if(isNaN(umurUser)) return await reply('Umur harus berupa angka!!')
+                			if (namaUser.length >= 30) return reply(`why is your name so long it's a name or a train`)
+                			if (umurUser > 40) return reply(`your age is too  old maximum 40 years`)
+                			if (umurUser < 12) return reply(`your age is too young minimum 12 years`)
+                					try {
+								ppimg = await death.getProfilePicture(`${sender.split('@')[0]}@c.us`)
+								} catch {
+								ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+							}
+                					veri = sender
+                					if (isGroup) {
+                    			addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+                    			await death.sendMessage(from, ppimg, image, {quoted: net, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    			addATM(sender)
+                    			addLevelingId(sender)
+                    			checkLimit(sender)
+                    			console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
+                			} else {
+                    			addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+                    			await death.sendMessage(from, ppimg, image, {quoted: net, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    			addATM(sender)
+                    			addLevelingId(sender)
+                    			checkLimit(sender)
+                    			console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
+                			}
+				        break
 				
 				
 			
