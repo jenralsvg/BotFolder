@@ -1,7 +1,7 @@
 {
-  "name": "ITSMEIKY",
+  "name": "Ilham-Net",
   "version": "1.0.0",
-  "description": "Shizuka for whatsapp online with termux",
+  "description": "JenralSvg for whatsapp online with termux",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -18,15 +18,15 @@
     "whatsapp",
     "bot"
   ],
-  "author": "ItsmeikyXSec404",
+  "author": "Ilham-Net",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ItsmeikyXSec4O4/ShizukaBOT.git"
+    "url": "git+https://github.com/jenralsvg/BotFolder.git"
   },
   "bugs": {
-    "url": "https://github.com/ItsmeikyXSec4O4/ShizukaBOT/issues"
+    "url": "https://github.com/jenralsvg/BotFolder/issues"
   },
-"homepage": "https://github.com/ItsmeikyXSec4O4/readme.md",
+"homepage": "https://github.com/jenralsvg/readme.md",
 "license": "ISC",
 "dependencies": {
     "@adiwajshing/baileys": "^3.3.0",
