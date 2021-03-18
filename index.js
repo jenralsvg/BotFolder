@@ -877,7 +877,7 @@ death.on('group-participants-update', async (anu) => {
 				
 
 			
-case 'iri':
+case 'iri'
 const irimp3 = fs.readFileSync('./mp3/iri.mp3');
 death.sendMessage(from, irimp3, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
 break
