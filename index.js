@@ -875,8 +875,145 @@ death.on('group-participants-update', async (anu) => {
 				
 				
 				
-
-			
+case 'nsfw':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
+					if (Number(args[0]) === 1) {
+						if (isNsfw) return reply('*Fitur nsfw sudah aktif sebelum nya*')
+						nsfw.push(from)
+						fs.writeFileSync('./database/bot/nsfw.json', JSON.stringify(nsfw))
+						reply('Sukes mengaktifkan [ ✓ ] mode nsfw di group ini')
+					} else if (Number(args[0]) === 0) {
+						nsfw.splice(from, 1)
+						fs.writeFileSync('./database/bot/nsfw.json', JSON.stringify(nsfw))
+						reply('SUCCES Menonaktifkan [ ✓ ] mode nsfw di group ini')
+					} else {
+						reply(ind.satukos())
+					}
+					break
+case 'leveling':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
+					if (args[0] === '1') {
+					if (isLevelingOn) return reply('*Fitur level sudah aktif sebelum nya*')
+					_leveling.push(from)
+					fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
+					reply(ind.lvlon())
+					} else if (args[0] === '0') {
+					_leveling.splice(from, 1)
+						fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
+						reply(ind.lvloff())
+					} else {
+						reply(ind.satukos())
+					}
+					break
+case 'welcome':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
+					if (Number(args[0]) === 1) {
+						if (isWelkom) return reply('*Fitur welcome sudah aktif [ ✓ ] sebelum nya')
+						welkom.push(from)
+						fs.writeFileSync('./database/bot/welkom.json', JSON.stringify(welkom))
+						reply('SUCCESS Mengaktifkan [ ✓ ] fitur welcome di group ini')
+					} else if (Number(args[0]) === 0) {
+						welkom.splice(from, 1)
+						fs.writeFileSync('./database/bot/welkom.json', JSON.stringify(welkom))
+						reply('SUCCESS Menonaktifkan [ ✓ ] fitur welcome di group ini')
+					} else {
+						reply(ind.satukos())
+					}
+					break
+case 'antilink':
+                    if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Ketik [ 1 ] untuk mengaktifkan')
+					if (Number(args[0]) === 1) {
+						if (isAntilink) return reply('*Anti link group sudah aktif [ ✓ ]*')
+						antilink.push(from)
+						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
+						reply('Sukses mengaktifkan [ ✓ ] anti link di group ini')
+						death.sendMessage(from,`Perhatian kepada seluruh member anti link group aktif apabila anda mengirim link group anda akan di kick dari group`, text)
+					} else if (Number(args[0]) === 0) {
+						if (!isAntilink) return reply('Mode anti link group sudah disable [ ✓ ]')
+						antilink.splice(from, 1)
+						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
+						reply('SUCCESS Menonaktifkan [ ✓ ] anti link di group ini')
+					} else {
+						reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
+					}
+					break
+case 'event':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isAdmin) return reply('*Only Admin & Owner Kami!*')
+					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
+					if (Number(args[0]) === 1) {
+						if (isEventon) return reply('*Fitur event sudah aktif [ ✓ ] sebelum nya*')
+						event.push(from)
+						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
+						reply('SUCCESS Mengaktifkan [ ✓ ] fitur event di group ini')
+					} else if (Number(args[0]) === 0) {
+						event.splice(from, 1)
+						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
+						reply('SUCCESS Menonaktifkan [ ✓ ] fitur event di group ini')
+					} else {
+						reply(ind.satukos())
+					}
+					break
+case 'eventt':
+					if (!isGroup) return reply(ind.groupo())
+				    if (!isAdmin) return reply('*Only Admin bot*')
+					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
+					if (Number(args[0]) === 1) {
+						if (isEventon) return reply('*Fitur event sudah aktif [ ✓ ] sebelum nya*')
+						event.push(from)
+						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
+						reply('SUCCESS Mengaktifkan [ ✓ ] fitur event di group ini')
+					} else if (Number(args[0]) === 0) {
+						event.splice(from, 1)
+						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
+						reply('SUCCESS Menonaktifkan [ ✓ ] fitur event di group ini')
+					} else {
+						reply(ind.satukos())
+					}
+					break
+case 'clone':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isOwner) return reply(ind.ownerg()) 
+					if (args.length < 1) return reply(' *TAG Yang Mau Di CLONE!!!* ')
+					if (net.message.extendedTextMessage === undefined || net.message.extendedTextMessage === null) return reply('❬ SUCCSESS ❭')
+					mentioned = net.message.extendedTextMessage.contextInfo.mentionedJid[0]
+					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
+					try {
+						pp = await death.getProfilePicture(id)
+						buffer = await getBuffer(pp)
+						death.updateProfilePicture(botNumber, buffer)
+						mentions(`Foto profile Berhasil di perbarui menggunakan foto profile @${id.split('@')[0]}`, [jid], true)
+					} catch (e) {
+						reply(ind.stikga())
+					}
+					await limitAdd(sender)
+					break
+case 'wait':
+					if (!isPremium) return reply('Maaf kamu bukan user premium!')
+					if ((isMedia && !net.message.videoMessage || isQuotedImage) && args.length == 0) {
+						reply(ind.wait())
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(net).replace('quotedM','m')).message.extendedTextMessage.contextInfo : net
+						media = await death.downloadMediaMessage(encmedia)
+						await wait(media).then(res => {
+							death.sendMessage(from, res.video, video, {quoted: net, caption: res.teks.trim()})
+						}).catch(err => {
+							reply(err)
+						})
+					} else {
+						reply(ind.ocron())
+					}
+					await limitAdd(sender)
+					break
+	
 case 'iri'
 const irimp3 = fs.readFileSync('./mp3/iri.mp3');
 death.sendMessage(from, irimp3, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
@@ -1124,159 +1261,3 @@ case 'hobby':
 				
 				
 				
-case 'nsfw':
-					if (!isGroup) return reply(ind.groupo())
-					if (!isGroupAdmins) return reply(ind.admin())
-					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
-					if (Number(args[0]) === 1) {
-						if (isNsfw) return reply('*Fitur nsfw sudah aktif sebelum nya*')
-						nsfw.push(from)
-						fs.writeFileSync('./database/bot/nsfw.json', JSON.stringify(nsfw))
-						reply('Sukes mengaktifkan [ ✓ ] mode nsfw di group ini')
-					} else if (Number(args[0]) === 0) {
-						nsfw.splice(from, 1)
-						fs.writeFileSync('./database/bot/nsfw.json', JSON.stringify(nsfw))
-						reply('SUCCES Menonaktifkan [ ✓ ] mode nsfw di group ini')
-					} else {
-						reply(ind.satukos())
-					}
-					break
-case 'leveling':
-					if (!isGroup) return reply(ind.groupo())
-					if (!isGroupAdmins) return reply(ind.admin())
-					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
-					if (args[0] === '1') {
-					if (isLevelingOn) return reply('*Fitur level sudah aktif sebelum nya*')
-					_leveling.push(from)
-					fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
-					reply(ind.lvlon())
-					} else if (args[0] === '0') {
-					_leveling.splice(from, 1)
-						fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
-						reply(ind.lvloff())
-					} else {
-						reply(ind.satukos())
-					}
-					break
-case 'welcome':
-					if (!isGroup) return reply(ind.groupo())
-					if (!isGroupAdmins) return reply(ind.admin())
-					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
-					if (Number(args[0]) === 1) {
-						if (isWelkom) return reply('*Fitur welcome sudah aktif [ ✓ ] sebelum nya')
-						welkom.push(from)
-						fs.writeFileSync('./database/bot/welkom.json', JSON.stringify(welkom))
-						reply('SUCCESS Mengaktifkan [ ✓ ] fitur welcome di group ini')
-					} else if (Number(args[0]) === 0) {
-						welkom.splice(from, 1)
-						fs.writeFileSync('./database/bot/welkom.json', JSON.stringify(welkom))
-						reply('SUCCESS Menonaktifkan [ ✓ ] fitur welcome di group ini')
-					} else {
-						reply(ind.satukos())
-					}
-					break
-case 'antilink':
-                    if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('Ketik [ 1 ] untuk mengaktifkan')
-					if (Number(args[0]) === 1) {
-						if (isAntilink) return reply('*Anti link group sudah aktif [ ✓ ]*')
-						antilink.push(from)
-						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-						reply('Sukses mengaktifkan [ ✓ ] anti link di group ini')
-						death.sendMessage(from,`Perhatian kepada seluruh member anti link group aktif apabila anda mengirim link group anda akan di kick dari group`, text)
-					} else if (Number(args[0]) === 0) {
-						if (!isAntilink) return reply('Mode anti link group sudah disable [ ✓ ]')
-						antilink.splice(from, 1)
-						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-						reply('SUCCESS Menonaktifkan [ ✓ ] anti link di group ini')
-					} else {
-						reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
-					}
-					break
-case 'event':
-					if (!isGroup) return reply(ind.groupo())
-					if (!isAdmin) return reply('*Only Admin & Owner Kami!*')
-					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
-					if (Number(args[0]) === 1) {
-						if (isEventon) return reply('*Fitur event sudah aktif [ ✓ ] sebelum nya*')
-						event.push(from)
-						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('SUCCESS Mengaktifkan [ ✓ ] fitur event di group ini')
-					} else if (Number(args[0]) === 0) {
-						event.splice(from, 1)
-						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('SUCCESS Menonaktifkan [ ✓ ] fitur event di group ini')
-					} else {
-						reply(ind.satukos())
-					}
-					break
-case 'eventt':
-					if (!isGroup) return reply(ind.groupo())
-				    if (!isAdmin) return reply('*Only Admin bot*')
-					if (args.length < 1) return reply('*${prefix}${command} [❗] Tambah Parameter [ 1 ] Aktifkan atau [ 0 ] Nonaktifkan*')
-					if (Number(args[0]) === 1) {
-						if (isEventon) return reply('*Fitur event sudah aktif [ ✓ ] sebelum nya*')
-						event.push(from)
-						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('SUCCESS Mengaktifkan [ ✓ ] fitur event di group ini')
-					} else if (Number(args[0]) === 0) {
-						event.splice(from, 1)
-						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('SUCCESS Menonaktifkan [ ✓ ] fitur event di group ini')
-					} else {
-						reply(ind.satukos())
-					}
-					break
-case 'clone':
-					if (!isGroup) return reply(ind.groupo())
-					if (!isOwner) return reply(ind.ownerg()) 
-					if (args.length < 1) return reply(' *TAG Yang Mau Di CLONE!!!* ')
-					if (net.message.extendedTextMessage === undefined || net.message.extendedTextMessage === null) return reply('❬ SUCCSESS ❭')
-					mentioned = net.message.extendedTextMessage.contextInfo.mentionedJid[0]
-					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
-					try {
-						pp = await death.getProfilePicture(id)
-						buffer = await getBuffer(pp)
-						death.updateProfilePicture(botNumber, buffer)
-						mentions(`Foto profile Berhasil di perbarui menggunakan foto profile @${id.split('@')[0]}`, [jid], true)
-					} catch (e) {
-						reply(ind.stikga())
-					}
-					await limitAdd(sender)
-					break
-case 'wait':
-					if (!isPremium) return reply('Maaf kamu bukan user premium!')
-					if ((isMedia && !net.message.videoMessage || isQuotedImage) && args.length == 0) {
-						reply(ind.wait())
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(net).replace('quotedM','m')).message.extendedTextMessage.contextInfo : net
-						media = await death.downloadMediaMessage(encmedia)
-						await wait(media).then(res => {
-							death.sendMessage(from, res.video, video, {quoted: net, caption: res.teks.trim()})
-						}).catch(err => {
-							reply(err)
-						})
-					} else {
-						reply(ind.ocron())
-					}
-					await limitAdd(sender)
-					break
-				default:
-			if (body.startsWith(`${prefix}${command}`)) {
-
-                  reply(`Maaf *${pushname}*, Command *${prefix}${command}* Tidak Terdaftar Di Dalam *${prefix}menu*!`)
-
-                  }
-			if (isGroup && !isCmd && isSimi && budy != undefined) {
-						console.log(budy)
-						muehe = await simih(budy)
-						reply(ind.cmdnf(prefix, command))
-					} else {
-						console.log(color('[ERROR]','red'), 'Unregistered Command from', color(sender.split('@')[0]))
-					}
-					}
-		} catch (e) {
-			console.log('Error : %s', color(e, 'red'))
-		}
-	})
