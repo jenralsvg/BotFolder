@@ -828,3 +828,65 @@ case 'katailham':
 				death.sendMessage(from, ''+ham+'\n\n_~ Kata Ilham_', text, { quoted: net })
 				await limitAdd(sender)
 				break
+//Daftar
+case 'daftar':
+		  if (isRegistered) return  reply(ind.rediregis())
+                			if (!q.includes('|')) return  reply(ind.wrongf())
+                			const namaUser = q.substring(0, q.indexOf('|') - 0)
+                			const umurUser = q.substring(q.lastIndexOf('|') + 1)
+                			const serialUser = createSerial(20)
+                			if(isNaN(umurUser)) return await reply('Umur harus berupa angka!!')
+                			if (namaUser.length >= 30) return reply(`why is your name so long it's a name or a train`)
+                			if (umurUser > 40) return reply(`your age is too  old maximum 40 years`)
+                			if (umurUser < 12) return reply(`your age is too young minimum 12 years`)
+                					try {
+								ppimg = await death.getProfilePicture(`${sender.split('@')[0]}@c.us`)
+								} catch {
+								ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+							}
+                					veri = sender
+                					if (isGroup) {
+                    			addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+                    			await death.sendMessage(from, ppimg, image, {quoted: net, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    			addATM(sender)
+                    			addLevelingId(sender)
+                    			checkLimit(sender)
+                    			console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
+                			} else {
+                    			addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+                    			await death.sendMessage(from, ppimg, image, {quoted: net, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    			addATM(sender)
+                    			addLevelingId(sender)
+                    			checkLimit(sender)
+                    			console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
+                			}
+				        break
+case 'mining':
+		  // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pushname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					if (!isEventon) return reply(`Maaf ${pushname} event mining tidak di aktifkan oleh owner`)
+					if (isOwner | isAdmin | isPremium) {
+					const one = Math.ceil(Math.random() * 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+					addLevelingXp(sender, one)
+					await reply(`Kamu bagian dari prabayar, aku akan berikan sebanyak *${one}Xp* untuk anda`)
+                 					     }else{
+					const mining = Math.ceil(Math.random() * 1000000000000000000000000)
+					addLevelingXp(sender, mining)
+					await reply(`*Selamat* ${pushname} kamu mendapatkan *${mining}Xp*`)
+					}
+					await limitAdd(sender)
+					break
+case 'bisakah':
+		  // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					bisakah = body.slice(1)
+					const bisa =['Bisa','Tidak Bisa','Coba Ulangi']
+					const keh = bisa[Math.floor(Math.random() * bisa.length)]
+					death.sendMessage(from, 'Pertanyaan : *'+bisakah+'*\n\nJawaban : '+ keh, text, { quoted: net })
+					await limitAdd(sender)
+					break
+		  
