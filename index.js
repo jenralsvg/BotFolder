@@ -807,72 +807,9 @@ death.on('group-participants-update', async (anu) => {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				
-				
-				
-				
+  switch(command) {
 case 'quotes':
-             if (!isRegistered) return reply( ind.noregis())
+		  if (!isRegistered) return reply( ind.noregis())
               if (isLimit(sender)) return reply(ind.limitend(pusname))
 			    if (isBanned) return reply('Maaf Kamu TerBanned, Silahkan Hub Owner Untuk Mengaktifkan Bot Kembali !')
 				quotes = body.slice(1)
@@ -881,14 +818,3 @@ case 'quotes':
 				death.sendMessage(from, ''+tes+'', text, { quoted: net })
 				await limitAdd(sender)
 				break
-case 'katailham':
-             if (!isRegistered) return reply( ind.noregis())
-              if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isBanned) return reply('Maaf Kamu TerBanned, Silahkan Hub Owner Untuk Mengaktifkan Bot Kembali !')
-				ilham = body.slice(1)
-				const hom =['Keadilan sosial hanya berlaku bagi seluruh warga negara yang good looking.','Nggak ada yang peduli denganmu di sosmed kecuali kamu cakep.','Dia hanya menghargaimu, bukan mencintaimu.','Dia cuman bercanda, harusnya kamu tertawa, bukan malah jatuh cinta.','Ilmu pengetahuan tanpa agama adalah pincang.','Hidup itu seperti sebuah sepeda, agar tetap seimbang kita harus tetap bergerak.','Sesuatu akan terasa berharga jika sudah kehilangan.','Dia gak jahat, bapermu aja yang salah tempat.',' Mencintaimu adalah seni menyakiti diri.']
-				const ham = hom[Math.floor(Math.random() * hom.length)]
-				death.sendMessage(from, ''+ham+'\n\n_~ Kata Ilham_', text, { quoted: net })
-				await limitAdd(sender)
-				break			
-                    			  
