@@ -21,14 +21,6 @@
   <img src="https://img.shields.io/badge/-SQLite3-black?style=flat-square&logo=sqlite" />
 </p>
 
-<p align="center">
-  <a href="https://github.com/jenralsvg"><img src="https://github-readme-stats7vercel.app/api/top-langs?username=IlhamNet&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&hide_border=true&show_icons=true&layout=compact" /></a>
-</p>
-
-<p align="center">
-  <a href="https://youtu.be/WgeItwiifYs"><img src="https://img.shields.io/badge/YouTubeff0000?style=for-the-badge&logo=youtube&logoColor=ff0000&link=https://youtu.be/WgeItwiifYs" /></a>
-  <a name=hendra759&label=VIEWS&style=flat-square&color=orange" />
-
 </p> 
  # Api's Ilham_Net
 
