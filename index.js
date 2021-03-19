@@ -2171,6 +2171,26 @@ case 'neonime':
 					reply(teks.trim())
 					await limitAdd(sender)
 					break
+case 'artinama':
+					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					if (args.length < 1) return reply('Tambahkan Parameter Nama Kak ?\nContoh ${prefix}artinama ilham Kak ')
+					anu = await fetchJson(`http://hadi-api.herokuapp.com/api/artinama?nama=${body.slice(10)}`, {method: 'get'})
+					reply('Menurut nama:\n\n'+anu.result)
+					await limitAdd(sender)
+					break
+case 'quran':
+					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					anu = await fetchJson(`https://api.banghasan.com/quran/format/json/acak`, {method: 'get'})
+					quran = `${anu.acak.ar.teks}\n\n${anu.acak.id.teks}\nQ.S ${anu.surat.nama} ayat ${anu.acak.id.ayat}`
+					death.sendMessage(from, quran, text, {quoted: net})
+					await limitAdd(sender)
+					break
 
 /*
 > Powered By Ilham_Net
