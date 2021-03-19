@@ -2236,6 +2236,46 @@ case 'developer':
                   death.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: net})
                   death.sendMessage(from, 'Tuh nomer owner ku Boss, Chat Jika Penting Ya. 😌',MessageType.text, { quoted: net} )
 					break    
+case 'iri':
+const irimp3 = fs.readFileSync('./assets/iri.mp3');
+death.sendMessage(from, irimp3, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'pale':
+const pa = fs.readFileSync('./assets/pale.mp3')
+death.sendMessage(from, pa, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'sound':
+const soun = fs.readFileSync('./assets/sound.mp3')
+death.sendMessage(from, soun, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break 
+case 'sound1':
+satu = fs.readFileSync('./assets/sound1.mp3');
+death.sendMessage(from, satu, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'sound2':
+dua = fs.readFileSync('./assets/sound2.mp3');
+death.sendMessage(from, dua, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'sound3':
+tiga = fs.readFileSync('./assets/sound3.mp3');
+death.sendMessage(from, tiga, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'sound4':
+empat = fs.readFileSync('./assets/sound4.mp3');
+death.sendMessage(from, empat, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'sound5':
+lima = fs.readFileSync('./assets/sound5.mp3');
+death.sendMessage(from, lima, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'sound6':
+enam = fs.readFileSync('./assets/sound6.mp3');
+death.sendMessage(from, enam, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break
+case 'sound7':
+tujuh = fs.readFileSync('./assets/sound7.mp3');
+death.sendMessage(from, tujuh, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
+break		
 /*
 > Powered By Ilham_Net
 Thanks To Temanku
