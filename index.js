@@ -957,6 +957,14 @@ case 'menuowner':
 					buffer = await getBuffer(`https://i.ibb.co/5nBhggv/2b84cc9cb84d76bc5c2b27e81d6aecfd.png`)
 					death.sendMessage(from, buffer, image, { quoted: net, caption: developer(prefix)})
 					break
+case 'groupmenu':
+case 'menugroup':
+					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					buffer = await getBuffer(`https://i.ibb.co/5nBhggv/2b84cc9cb84d76bc5c2b27e81d6aecfd.png`)
+					death.sendMessage(from, buffer, image, { quoted: net, caption: group(prefix)})
+					break
 case 'bahasa':
 					 // Update By Ilham_Net				
                  if (!isRegistered) return reply( ind.noregis())
