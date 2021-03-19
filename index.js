@@ -1,6 +1,6 @@
 // ]>> Cinta Oh Cinta <<[
 // ]> Ubah Aja Nda Papa <[
-// ]> Yang Penting Kelen Bahagia [ ilham-Net²⁰³ ]
+// ]> Yang Penting Kelen Bahagia [ ilham-Net ]
 // Jika Di Ubah
 // Note : Kalo Error Jangan Salahkan Saya...
  const {
@@ -48,7 +48,7 @@ const { ind } = require('./language')
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
             + 'FN:JRL Enzet BOT\n' 
-            + 'ORG: ilham-Net²⁰³;\n' 
+            + 'ORG: ilham-Net;\n' 
             + 'TEL;type=CELL;type=VOICE;waid=6285757196481:+62 857-5719-6481\n' 
             + 'END:VCARD'
 prefix = '#'
