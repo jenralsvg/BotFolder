@@ -1981,7 +1981,182 @@ case 'quran':
 					quran = `${anu.acak.ar.teks}\n\n${anu.acak.id.teks}\nQ.S ${anu.surat.nama} ayat ${anu.acak.id.ayat}`
 					death.sendMessage(from, quran, text, {quoted: net})
 					await limitAdd(sender)
-					break		
+					break	
+case 'ocr': 
+					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					if ((isMedia && !net.message.videoMessage || isQuotedImage) && args.length == 0) {
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(net).replace('quotedM','m')).message.extendedTextMessage.contextInfo : net
+						const media = await death.downloadAndSaveMediaMessage(encmedia)
+						reply(ind.wait())
+						await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3})
+							.then(teks => {
+								reply(teks.trim())
+								fs.unlinkSync(media)
+							})
+							.catch(err => {
+								reply(err.message)
+								fs.unlinkSync(media)
+							})
+					} else {
+						reply(`*Kirim foto dengan caption ${prefix}ocr*`)
+					}
+					await limitAdd(sender)
+					break
+case 'stickergif':
+case 'stikergif':
+case 'sgif':
+case 'stiker': 
+case 'sticker':
+case 's':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				    if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					await limitAdd(sender)
+					if ((isMedia && !net.message.videoMessage || isQuotedImage) && args.length == 0) {
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(net).replace('quotedM','m')).message.extendedTextMessage.contextInfo : net
+						const media = await death.downloadAndSaveMediaMessage(encmedia)
+						ran = getRandom('.webp')
+						await ffmpeg(`./${media}`)
+							.input(media)
+							.on('start', function (cmd) {
+								console.log(`Started : ${cmd}`)
+							})
+							.on('error', function (err) {
+								console.log(`Error : ${err}`)
+								fs.unlinkSync(media)
+								reply(ind.stikga())
+							})
+							.on('end', function () {
+								console.log('Finish')
+								buffer = fs.readFileSync(ran)
+								death.sendMessage(from, buffer, sticker, {quoted: net})
+								fs.unlinkSync(media)
+								fs.unlinkSync(ran)
+							})
+							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+							.toFormat('webp')
+							.save(ran)
+					} else if ((isMedia && net.message.videoMessage.seconds < 11 || isQuotedVideo && net.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(net).replace('quotedM','m')).message.extendedTextMessage.contextInfo : net
+						const media = await death.downloadAndSaveMediaMessage(encmedia)
+						ran = getRandom('.webp')
+						reply(ind.wait())
+						await ffmpeg(`./${media}`)
+							.inputFormat(media.split('.')[1])
+							.on('start', function (cmd) {
+								console.log(`Started : ${cmd}`)
+							})
+							.on('error', function (err) {
+								console.log(`Error : ${err}`)
+								fs.unlinkSync(media)
+								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+								reply(ind.stikga())
+							})
+							.on('end', function () {
+								console.log('Finish')
+								buffer = fs.readFileSync(ran)
+								death.sendMessage(from, buffer, sticker, {quoted: net})
+								fs.unlinkSync(media)
+								fs.unlinkSync(ran)
+							})
+							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+							.toFormat('webp')
+							.save(ran)
+							} else {
+						reply(`Kirim gambar dengan caption ${prefix}sticker atau reply tag gambar`)
+					}
+					break
+case 'gtts':
+case 'tts':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (!isPremium) return reply('Maaf kamu bukan user premium!')
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				if (args.length < 1) return death.sendMessage(from, 'Diperlukan kode bahasa kak!!', text, {quoted: net})
+					const gtts = require('./lib/gtts')(args[0])
+					if (args.length < 2) return death.sendMessage(from, 'Mana teks yang mau di jadiin suara ?\nContoh ${prefix}tts id aku cinta ilham ', text, {quoted: net})
+					dtt = body.slice(8)
+					ranm = getRandom('.mp3')
+					rano = getRandom('.ogg')
+					dtt.length > 300
+					? reply('Textnya kebanyakan setan!! ðŸ˜¤')
+					: gtts.save(ranm, dtt, function() {
+						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
+							fs.unlinkSync(ranm)
+							buffer = fs.readFileSync(rano)
+							if (err) return reply(ind.stikga())
+							death.sendMessage(from, buffer, audio, {quoted: net, ptt:true})
+							fs.unlinkSync(rano)
+						})
+					})
+					await limitAdd(sender)
+					break
+case 'setprefix':
+					if (args.length < 1) return
+					if (!isOwner) return reply(ind.ownerb())
+					prefix = args[0]
+					reply(`*Prefix berhasil di ubah menjadi* : ${prefix}`)
+					break 
+case 'setlimit':
+case 'addlimit':
+					if (args.length < 1) return
+					if (!isOwner) return reply(ind.ownerb())
+					limitawal = args[0]
+					reply(`*Limit berhasil di ubah menjadi* : ${limitawal}`)
+					break 
+case 'setlimitt':
+case 'addlimitt':
+					if (args.length < 1) return
+				if (!isAdmin) return reply('*Only Admin bot*')
+					limitawal = args[0]
+					reply(`*Limit berhasil di ubah menjadi* : ${limitawal}`)
+					break 
+case 'setmemlimit':
+					if (args.length < 1) return
+					if (!isOwner) return reply(ind.ownerb())
+					if (isNaN(args[0])) return reply('Limit harus angka')
+					memberlimit = args[0]
+					reply(`Change Member limit To ${memberlimit} Succes! [  ]`)
+					break 
+case 'setmemlimitt':
+					if (args.length < 1) return
+				if (!isAdmin) return reply('*Only Admin bot*')
+					if (isNaN(args[0])) return reply('Limit harus angka')
+					memberlimit = args[0]
+					reply(`Change Member limit To ${memberlimit} Succes! [  ]`)
+					break 
+case 'tiktokstalk':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				try {
+						if (args.length < 1) return death.sendMessage(from, '*Username mana kak?', text, {quoted: net})
+						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
+						reply(ind.wait())
+						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
+						buffer = await getBuffer(user.avatarLarger)
+						death.sendMessage(from, buffer, image, {quoted: net, caption: teks})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('*(ERROR)* *Kemungkinan username tidak valid*')
+					}
+					await limitAdd(sender)
+					break
+case 'linkgc':
+				if (!isGroup) return reply(ind.groupo())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (!isBotGroupAdmins) return reply(ind.badmin())
+				linkgc = await death.groupInviteCode (from)
+				yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
+				death.sendMessage(from, yeh, text, {quoted: net})
+				await limitAdd(sender)
+				break
 /*
 > Powered By Ilham_Net
 Thanks To Temanku
