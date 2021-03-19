@@ -1014,6 +1014,68 @@ case 'ping':
                  if (!isRegistered) return reply( ind.noregis())
 					await death.sendMessage(from, `Pong!!!!\nSpeed: ${processTime(time, moment())} _Second_`)
 					break
+case 'tagall':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					members_id = []
+					teks = (args.length > 1) ? body.slice(8).trim() : ''
+					teks += '\n\n'
+					for (let mem of groupMembers) {
+						teks += `*~>* @${mem.jid.split('@')[0]}\n`
+						members_id.push(mem.jid)
+					}
+					mentions(teks, members_id, true)
+					break
+case 'clearall':
+					if (!isOwner) return reply(ind.ownerb())
+					anu = await death.chats.all()
+					death.setMaxListeners(25)
+					for (let _ of anu) {
+						death.deleteChat(_.jid)
+					}
+					reply(ind.clears())
+					break
+case 'blockk':
+				 death.updatePresence(from, Presence.composing) 
+				 death.chatRead (from)
+					if (!isGroup) return reply(ind.groupo())
+				if (!isAdmin) return reply('*Only Admin bot*')
+					death.blockUser (`${body.slice(8)}@c.us`, "add")
+					death.sendMessage(from, `*Perintah Diterima, Memblokir* ${body.slice(7)}@c.us`, text)
+					break
+case 'unblockk':
+					if (!isGroup) return reply(ind.groupo())
+				if (!isAdmin) return reply('*Only Admin bot*')
+				    death.blockUser (`${body.slice(10)}@c.us`, "remove")
+					death.sendMessage(from, `*Perintah Diterima, Membuka Blockir* ${body.slice(9)}@c.us`, text)
+					break
+case 'block':
+				 death.updatePresence(from, Presence.composing) 
+				 death.chatRead (from)
+					if (!isGroup) return reply(ind.groupo())
+					if (!isOwner) return reply(ind.ownerb())
+					death.blockUser (`${body.slice(7)}@c.us`, "add")
+					death.sendMessage(from, `*Perintah Diterima, Memblokir* ${body.slice(7)}@c.us`, text)
+					break
+case 'unblock':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isOwner) return reply(ind.ownerb())
+				    death.blockUser (`${body.slice(9)}@c.us`, "remove")
+					death.sendMessage(from, `*Perintah Diterima, Membuka Blockir* ${body.slice(9)}@c.us`, text)
+					break
+case 'leave':
+					 // Update by Ilham_Net			
+                 if (!isRegistered) return reply( ind.noregis())
+					if (!isGroup) return reply(ind.groupo())
+					if (!isOwner) return reply(ind.ownerb())
+					setTimeout( () => {
+					death.groupLeave (from) 
+					}, 2000)
+					setTimeout( () => {
+					death.updatePresence(from, Presence.composing) 
+					death.sendMessage(from, 'Sampai jumpa 👋', text) // ur cods
+					}, 0)
+					break
 case 'setpp': 
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
