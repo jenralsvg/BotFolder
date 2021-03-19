@@ -1110,7 +1110,77 @@ case 'group':
 						reply(`*Berhasil Menutup Group* [ ✓ ]`)
 						death.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
-					break      
+					break     
+case 'kick':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					if (!isBotGroupAdmins) return reply(ind.badmin())
+					if (net.message.extendedTextMessage === undefined || net.message.extendedTextMessage === null) return reply('𝗧𝗮𝗴 𝘁𝗮𝗿𝗴𝗲𝘁 ??𝗮𝗻𝗴 𝗶𝗻𝗴𝗶𝗻 𝗱𝗶 𝘁𝗲𝗻𝗱𝗮𝗻𝗴!')
+					mentioned = net.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) {
+						teks = ''
+						for (let _ of mentioned) {
+							teks += `*Perintah Admin Kamu Di Kick* :\n`
+							teks += `@_.split('@')[0]`
+						}
+						mentions(teks, mentioned, true)
+						death.groupRemove(from, mentioned)
+					} else {
+						mentions(`*Perintah Admin Kamu Di Kick* @${mentioned[0].split('@')[0]}`, mentioned, true)
+						death.groupRemove(from, mentioned)
+					}
+					break
+case 'listadmin':
+					if (!isGroup) return reply(ind.groupo())
+					teks = `List admin of group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
+					no = 0
+					for (let admon of groupAdmins) {
+						no += 1
+						teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
+					}
+					mentions(teks, groupAdmins, true)
+					break
+case 'toimg':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (!isQuotedSticker) return reply('*Reply/Tag sticker!*')
+					reply(ind.wait())
+					encmedia = JSON.parse(JSON.stringify(net).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+					media = await death.downloadAndSaveMediaMessage(encmedia)
+					ran = getRandom('.png')
+					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+						fs.unlinkSync(media)
+						if (err) return reply(ind.stikga())
+						buffer = fs.readFileSync(ran)
+						death.sendMessage(from, buffer, image, {quoted: net, caption: '*DAH JADI SETAN* '})
+						fs.unlinkSync(ran)
+					})
+					await limitAdd(sender)
+					break
+ case 'simi':
+					if (args.length < 1) return reply('Textnya mana kak?')
+					teks = body.slice(5)
+					anu = await simih(teks) //fetchJson(`https://mhankbarbars.herokuapp.com/api/samisami?text=${teks}`, {method: 'get'})
+					//if (anu.error) return reply('Simi ga tau kak')
+					reply(anu)
+					break
+case 'simih':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					if (args.length < 1) return reply('Mengaktifkan tekan [ 1 ] Menonaktif tekan [ 0 ]')
+					if (Number(args[0]) === 1) {
+						if (isSimi) return reply('*Fitur simi sudah aktif sebelum nya*')
+						samih.push(from)
+						fs.writeFileSync('./database/bot/simi.json', JSON.stringify(samih))
+						reply('Sukses mengaktifkan [ ✓ ] mode simi di group ini')
+					} else if (Number(args[0]) === 0) {
+						samih.splice(from, 1)
+						fs.writeFileSync('./database/bot/simi.json', JSON.stringify(samih))
+						reply('Sukes menonaktifkan [ ✓ ] mode simi di group ini')
+					} else {
+						reply(ind.satukos())
+					}
+					break
 case 'nsfw':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
