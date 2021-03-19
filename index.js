@@ -2201,6 +2201,29 @@ case 'jadwalsholat':
 		  death.sendMessage(from, sholat, text, {quoted: net})
 		  await limitAdd(sender)
 		  break
+case 'wa.me':
+case 'wame':
+  					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+  					if (isLimit(sender)) return reply(ind.limitend(pusname))
+  					death.updatePresence(from, Presence.composing) 
+  					options = {
+  					text: `「 *SELF WHATSAPP* 」\n\n_Request by_ : *@${sender.split("@s.whatsapp.net")[0]}\n\nYour link WhatsApp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*Or ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
+  					contextInfo: { mentionedJid: [sender] }
+  					}
+  					death.sendMessage(from, options, text, { quoted: net } )
+  					break
+  					if (data.error) return reply(data.error)
+  					reply(data.result)
+					await limitAdd(sender)
+  					break
+case 'admin':
+case 'owner':
+case 'creator':
+case 'developer':
+                  death.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: net})
+                  death.sendMessage(from, 'Tuh nomer owner ku Boss, Chat Jika Penting Ya. 😌',MessageType.text, { quoted: net} )
+					break    
 /*
 > Powered By Ilham_Net
 Thanks To Temanku
