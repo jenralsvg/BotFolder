@@ -1962,31 +1962,3 @@ case 'giftlimit':
                                 reply(`Maaf, nomor ${nomerr} tidak terdaftar di database!`)
                         	}
                			break
-case 'artinama':
-					 // Update By Ilham_Net				
-                 if (!isRegistered) return reply( ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isBanned) return reply('Maaf kamu sudah terbenned!')
-					if (args.length < 1) return reply('Tambahkan Parameter Nama Kak ?\nContoh ${prefix}artinama ilham Kak 😌')
-					anu = await fetchJson(`http://hadi-api.herokuapp.com/api/artinama?nama=${body.slice(10)}`, {method: 'get'})
-					reply('Menurut nama:\n\n'+anu.result)
-					await limitAdd(sender)
-					break
-case 'quran':
-					 // Update By Ilham_Net				
-                 if (!isRegistered) return reply( ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isBanned) return reply('Maaf kamu sudah terbenned!')
-					anu = await fetchJson(`https://api.banghasan.com/quran/format/json/acak`, {method: 'get'})
-					quran = `${anu.acak.ar.teks}\n\n${anu.acak.id.teks}\nQ.S ${anu.surat.nama} ayat ${anu.acak.id.ayat}`
-					death.sendMessage(from, quran, text, {quoted: net})
-					await limitAdd(sender)
-					break
-case 'jadwalsholat':
-					 // Update By Ilham_Net				
-                 if (!isRegistered) return reply( ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isBanned) return reply('Maaf kamu sudah terbenned!')
-				if (args.length < 1) return reply('kota nya mana kak?')
-					anu = await fetchJson(`https://zahirr-web.herokuapp.com/api/jadwalshalat?kota=${body.slice(14)}&apikey=zahirgans`, {method: 'get'})
-					sholat = `Tanggal : ${anu.result.tanggal}\nAshar : ${anu.result.ashr}\nDzuhur : ${anu.result.dzuhur}\nMagrib : ${anu.result.magrib}\nIsha : ${anu.result.isya}\nShubuh : ${anu.result.shubuh}\nImsyak : ${anu.result.imsyak`
