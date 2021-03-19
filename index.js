@@ -2157,6 +2157,21 @@ case 'linkgc':
 				death.sendMessage(from, yeh, text, {quoted: net})
 				await limitAdd(sender)
 				break
+case 'neonime':
+				         // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				        if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					death.updatePresence(from, Presence.composing) 
+					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/neonime_lastest`, {method: 'get'})
+					teks = '################\n'
+					for (let i of data.result) {
+						teks += `*Title* : ${i.judul}\n*link* : ${i.link}\n*rilis* : ${i.rilis}\n###############\n`
+					}
+					reply(teks.trim())
+					await limitAdd(sender)
+					break
+
 /*
 > Powered By Ilham_Net
 Thanks To Temanku
