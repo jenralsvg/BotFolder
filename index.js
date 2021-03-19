@@ -1168,6 +1168,13 @@ case 'wame':
   					reply(data.result)
 					await limitAdd(sender)
   					break
+case 'admin':
+case 'owner':
+case 'creator':
+case 'developer':
+                  death.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: net})
+                  death.sendMessage(from, 'Tuh nomer owner Bot, Pesan jika ada yang penting.',MessageType.text, { quoted: net} )
+					break    
 case 'iri':
 const irimp3 = fs.readFileSync('./assets/iri.mp3');
 death.sendMessage(from, irimp3, MessageType.audio, {quoted: net, mimetype: 'audio/mp4', ptt:true})
