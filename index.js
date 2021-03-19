@@ -1014,6 +1014,41 @@ case 'ping':
                  if (!isRegistered) return reply( ind.noregis())
 					await death.sendMessage(from, `Pong!!!!\nSpeed: ${processTime(time, moment())} _Second_`)
 					break
+case 'setpp': 
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+                   			if (!isBotGroupAdmins) return reply(ind.badmin())
+					media = await death.downloadAndSaveMediaMessage(net)
+					await death.updateProfilePicture (from, media)
+					reply('*Sukses mengganti icon group* [ ✓ ]')
+					break				
+case 'add':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					if (!isBotGroupAdmins) return reply(ind.badmin())
+					if (args.length < 1) return reply('Yang mau di add siapa ?')
+					if (args[0].startsWith('08')) return reply('Gunakan kode negara bos')
+					try {
+						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+						death.groupAdd(from, [num])
+					} catch (e) {
+						console.log('Error :', e)
+						reply('Gagal menambahkan target, mungkin karena di private')
+					}
+					break
+case 'grup':
+case 'group':
+					if (!isGroup) return reply(ind.groupo())
+					if (!isGroupAdmins) return reply(ind.admin())
+					if (!isBotGroupAdmins) return reply(ind.badmin())
+					if (args[0] === 'buka') {
+					    reply(`*Berhasil Membuka Group* [ ✓ ]`)
+						death.groupSettingChange(from, GroupSettingChange.messageSend, false)
+					} else if (args[0] === 'tutup') {
+						reply(`*Berhasil Menutup Group* [ ✓ ]`)
+						death.groupSettingChange(from, GroupSettingChange.messageSend, true)
+					}
+					break      
 case 'nsfw':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
