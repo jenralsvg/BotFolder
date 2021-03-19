@@ -1399,6 +1399,197 @@ case 'wait':
 					}
 					await limitAdd(sender)
 					break
+case 'admin':
+				if (!isOwner) return reply(ind.ownerb())
+				admm = body.slice(7)
+				adm.push(`${admm}@s.whatsapp.net`)
+				fs.writeFileSync('./database/user/admin.json', JSON.stringify(adm))
+				reply(`Berhasil menambahkan admin bot wa.me/${admm} `)
+				break
+case 'unadmin':
+				if (!isOwner) return reply(ind.ownerb())
+				admm = body.slice(9)
+				admin.push(`${adm}@s.whatsapp.net`)
+				fs.writeFileSync('./database/user/admin.json', JSON.stringify(adm))
+				reply(`Berhasil menambahkan admin bot wa.me/${adm} `)
+				break
+case 'wakillist':
+				death.updatePresence(from, Presence.composing) 
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())    
+				teks = 'This is list of admin bot number :\n'
+				for (let admm of adm) {
+					teks += `~> @${admm.split('@')[0]}\n`
+					}
+					teks += `Total : ${admm.length}`
+				death.sendMessage(from, teks.trim(), extendedText, {quoted: net, contextInfo: {"mentionedJid": adm}})
+				break
+case 'premium':
+				if (!isOwner) return reply(ind.ownerb())
+				premm = body.slice(9)
+				prem.push(`${premm}@s.whatsapp.net`)
+				fs.writeFileSync('./database/user/premium.json', JSON.stringify(prem))
+				reply(`Berhasil menjadi premium wa.me/${premm} `)
+				break
+case 'unpremium':
+				if (!isOwner) return reply(ind.ownerb())
+				premm = body.slice(11)
+				prem.splice(`${premm}@s.whatsapp.net`, 1)
+				fs.writeFileSync('./database/user/premium.json', JSON.stringify(prem))
+				reply(`Nomor sudah berakhir menjadi premium wa.me/${premm} `)
+				break
+case 'premiumlist':
+				death.updatePresence(from, Presence.composing) 
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())    
+				teks = 'This is list of premium number :\n'
+				for (let premm of prem) {
+					teks += `~> @${premm.split('@')[0]}\n`
+					}
+					teks += `Total : ${prem.length}`
+				death.sendMessage(from, teks.trim(), extendedText, {quoted: net, contextInfo: {"mentionedJid": prem}})
+				break
+case 'bann':
+				if (!isAdmin) return reply('*Only Admin bot*')
+				bnnd = body.slice(5)
+				ban.push(`${bnnd}@s.whatsapp.net`)
+				fs.writeFileSync('./database/user/banned.json', JSON.stringify(ban))
+				reply(`Berhasil membanned nomor : wa.me/${bnnd} `)
+				break
+case 'unbann':
+				if (!isAdmin) return reply('*Only Admin bot*')
+				bnnd = body.slice(7)
+				ban.splice(`${bnnd}@s.whatsapp.net`, 1)
+				fs.writeFileSync('./database/user/banned.json', JSON.stringify(ban))
+				reply(`Nomor wa.me/${bnnd} telah di unban!`)
+				break
+case 'ban':
+				if (!isOwner) return reply(ind.ownerb())
+				bnnd = body.slice(5)
+				ban.push(`${bnnd}@s.whatsapp.net`)
+				fs.writeFileSync('./database/user/banned.json', JSON.stringify(ban))
+				reply(`Berhasil membanned nomor : wa.me/${bnnd} `)
+				break
+case 'unban':
+				if (!isOwner) return reply(ind.ownerb())
+				bnnd = body.slice(7)
+				ban.splice(`${bnnd}@s.whatsapp.net`, 1)
+				fs.writeFileSync('./database/user/banned.json', JSON.stringify(ban))
+				reply(`Nomor wa.me/${bnnd} telah di unban!`)
+				break
+case 'banlist':
+				death.updatePresence(from, Presence.composing) 
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())    
+				teks = 'This is list of banned number :\n'
+				for (let benn of ban) {
+					teks += `~> @${benn.split('@')[0]}\n`
+					}
+					teks += `Total : ${ban.length}`
+				death.sendMessage(from, teks.trim(), extendedText, {quoted: net, contextInfo: {"mentionedJid": ban}})
+				break
+
+case 'leaderboard':
+case 'lb':
+				_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
+				uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
+				let leaderboardlvl = '-----[ *LEADERBOARD LEVEL* ]----\n\n'
+				let leaderboarduang = '-----[ *LEADERBOARD UANG* ]----\n\n'
+				let nom = 0
+				try {
+				for (let i = 0; i < 10; i++) {
+					nom++
+					leaderboardlvl += `*[${nom}]* ${_level[i].id.replace('@s.whatsapp.net', '')}\n◪  *XP*: ${_level[i].xp}\n◪  *Level*: ${_level[i].level}\n`
+					leaderboarduang += `*[${nom}]* ${uang[i].id.replace('@s.whatsapp.net', '')}\n◪  *Uang*: _Rp${uang[i].uang}_\n◪  *Limit*: ${limitawal - _limit[i].limit}\n`
+				}
+				await reply(leaderboardlvl)
+				await reply(leaderboarduang)
+				} catch (err) {
+				console.error(err)
+				await reply(`minimal 10 user untuk bisa mengakses database`)
+				}
+				break
+case 'kalkulator':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				if (args.length < 1) return reply(`[❗] Kirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n• Untuk Perkalian Menggunakan *\n• Untuk Pertambahan Menggunakan +\n• Untuk Pengurangan Menggunakan -\n• Untuk Pembagian Menggunakan /`)
+				const Math_js = require('mathjs')
+				mtk = body.slice(12)
+				if (typeof Math_js.evaluate(mtk) !== "number") {
+					reply(`"${mtk}", Kesalahan!\n[❗] Kirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n• Untuk Perkalian Menggunakan *\n• Untuk Pertambahan Menggunakan +\n• Untuk Pengurangan Menggunakan -\n• Untuk Pembagian Menggunakan /`)
+				} else {
+					reply(`*「 MATH 」*\n\n*Kalkulator*\n${mtk} = ${Math_js.evaluate(mtk)}`)
+				}
+				await limitAdd(sender)
+				break
+case 'dompet':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				const kantong = checkATMuser(sender)
+				reply(ind.uangkau(pushname, sender, kantong))
+				break
+case 'buylimit':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				payout = body.slice(10)
+				const koinPerlimit = 2000
+				const total = koinPerlimit * payout
+				if ( checkATMuser(sender) <= total) return reply(`Maaf uang kamu belum mencukupi. silahkan kumpulkan dan beli nanti`)
+				if ( checkATMuser(sender) >= total ) {
+					confirmATM(sender, total)
+					bayarLimit(sender, payout)
+					await reply(`*「 PEMBAYARAN BERHASIL 」*\n\n*Pengirim* : Admin\n*Penerima* : ${pushname}\n*Nominal pembelian* : ${payout} \n*Harga limit* : ${koinPerlimit}/limit\n*Sisa uang mu* : ${checkATMuser(sender)}\n\nProses berhasil dengan nomer pembayaran\n${createSerial(20)}`)
+				} 
+				break
+case 'buypremiumlimit':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (!isPremium) return reply('Maaf kamu bukan user premium!')
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				payout = body.slice(17)
+				const koinpremPerlimit = 500
+				const totalprem = koinpremPerlimit * payout
+				if ( checkATMuser(sender) <= totalprem) return reply(`Maaf uang kamu belum mencukupi. silahkan kumpulkan dan beli nanti`)
+				if ( checkATMuser(sender) >= totalprem ) {
+					confirmATM(sender, totalprem)
+					bayarLimit(sender, payout)
+					await reply(`*「 PEMBAYARAN BERHASIL 」*\n\n*Pengirim* : Admin\n*Penerima* : ${pushname}\n*Nominal pembelian* : ${payout} \n*Harga limit* : ${koinpremPerlimit}/limit\n*Sisa uang mu* : ${checkATMuser(sender)}\n\nProses berhasil dengan nomer pembayaran\n${createSerial(20)}`)
+				} 
+				break
+case 'giftlimit': 
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (!isAdmin) return reply('*Only Admin & Owner Kami!*')
+				const nomerr = args[0].replace('@','')
+                		const jmla = args[1]
+                		if (jmla <= 1) return reply(`minimal gift limit adalah 1`)
+                		if (isNaN(jmla)) return reply(`limit harus berupa angka`)
+                		if (!nomerr) return reply(`maaf format salah\nmasukan parameter yang benar\ncontoh : ${prefix}giftlimit @6285757196481 20`)
+                		const cysz = nomerr + '@s.whatsapp.net'
+                		var found = false
+                        			Object.keys(_limit).forEach((i) => {
+                            			if(_limit[i].id === cysz){
+                                			found = i
+                            			}
+                        		})
+                        	if (found !== false) {
+                            	_limit[found].limit -= jmla
+                            	const updated = _limit[found]
+                            	const result = `Gift kuota limit sukses dengan NS: ${createSerial(20)} pada ${moment().format('DD/MM/YY HH:mm:ss')}
+							*「 GIFT KUOTA LIMIT 」*
+							• User : @${updated.id.replace('@s.whatsapp.net','')}
+							• Limit: ${limitawal-updated.limit}`
+                            	console.log(_limit[found])
+                            	fs.writeFileSync('./database/user/limit.json',JSON.stringify(_limit));
+                            	reply(result)
+                        	} else {
+                                reply(`Maaf, nomor ${nomerr} tidak terdaftar di database!`)
+                        	}
+               			break
 case 'wa.me':
 case 'wame':
   					 // Update By Ilham_Net				
