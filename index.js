@@ -962,7 +962,7 @@ case 'menugroup':
 					 // Update By Ilham_Net				
                  if (!isRegistered) return reply( ind.noregis())
 				if (isBanned) return reply('Maaf kamu sudah terbenned!')
-					buffer = await getBuffer(`https://ibb.co/0svd6wD`)
+					buffer = await getBuffer(`https://i.ibb.co/fDLPyc1/images.jpg`)
 					death.sendMessage(from, buffer, image, { quoted: net, caption: group(prefix)})
 					break
 case 'bahasa':
