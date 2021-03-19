@@ -806,6 +806,20 @@ death.on('group-participants-update', async (anu) => {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			
   switch(command) {
+case 'glitch': // Update By Ilham_Net	
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				if (args.length < 1) return reply(ind.wrongf())
+				ct = body.slice(7)
+				ll1 = ct.split("|")[0];
+                                ll2 = ct.split("|")[1];
+				reply(ind.wait())
+				anu = await fetchJson(`https://zahirr-web.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&theme=glitch&apikey=zahirgans`)
+				buffer = await getBuffer(anu.result.url)
+				death.sendMessage(from, buffer, image, {quoted: net, caption: 'Nih hasilnya kak...'})
+				await limitAdd(sender)
+				break
 case 'textcup':
 				 // Update By Ilham_Net				
                  if (!isRegistered) return reply( ind.noregis())
