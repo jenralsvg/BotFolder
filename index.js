@@ -3,13 +3,6 @@
 // ]> Yang Penting Kelen Bahagia [ ilham-Net ]
 // Jika Di Ubah
 // Note : Kalo Error Jangan Salahkan Saya...
-const {
-    WAConnection,
-    MessageType,
-    Presence,
-    Mimetype,
-    GroupSettingChange
-} = require('@adiwajshing/baileys')
 const qrcode = require("qrcode-terminal") 
 const moment = require("moment-timezone") 
 const fs = require("fs") 
@@ -35,6 +28,22 @@ const ffmpeg = require('fluent-ffmpeg')
 const cd = 4.32e+7
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { ind } = require('./language')
+//
+const {
+   WAConnection,
+   MessageType,
+   Presence,
+   MessageOptions,
+   Mimetype,
+   WALocationMessage,
+   WA_MESSAGE_STUB_TYPES,
+   ReconnectMode,
+   ProxyAgent,
+   GroupSettingChange,
+   waChatKey,
+   mentionedJid,
+   processTime,
+} = require("@adiwajshing/baileys")
 
 /********** MENU SETTING **********/
 const vcard = 'BEGIN:VCARD\n' 
