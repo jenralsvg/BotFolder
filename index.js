@@ -1990,9 +1990,6 @@ case 'jadwalsholat':
 				if (args.length < 1) return reply('kota nya mana kak?')
 					anu = await fetchJson(`https://zahirr-web.herokuapp.com/api/jadwalshalat?kota=${body.slice(14)}&apikey=zahirgans`, {method: 'get'})
 					sholat = `Tanggal : ${anu.result.tanggal}\nAshar : ${anu.result.ashr}\nDzuhur : ${anu.result.dzuhur}\nMagrib : ${anu.result.magrib}\nIsha : ${anu.result.isya}\nShubuh : ${anu.result.shubuh}\nImsyak : ${anu.result.imsyak`
-					death.sendMessage(from, sholat, text, {quoted: net})
-					await limitAdd(sender)
-					break
 case 'neonime':
 				         // Update By Ilham_Net				
                  if (!isRegistered) return reply( ind.noregis())
