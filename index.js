@@ -854,6 +854,89 @@ case 'textapi':
 				death.sendMessage(from, hadi, image, {caption: 'Nih Bos', quoted: net})
 				await limitAdd(sender)
 				break 
+case 'help': 
+case 'menu':
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					const reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
+					const uangku = checkATMuser(sender)
+					en = fs.readFileSync(`./src/logo.jpg`)
+                    zet = ` ◪ *INFO DEVELOPER*
+  ❏ Nama: Ilham_Net
+  ❏ Wa: wa.me/6285757196481
+  ❏ Web Api: https://ilham-net.herokuapp
+  ----------------------------------
+◪ *YOUR INFO*
+  ❏ Prefix: 「  ${prefix}  」
+  ❏ Nama: ${pushname}
+  ❏ Uang mu : Rp${uangku}
+  ❏ Nomer: ${sender.split("@")[0]}
+  ❏ XP: ${getLevelingXp(sender)}/${reqXp}
+  ❏ Level: ${getLevelingLevel(sender)}
+  ❏ User register : ${_registered.length}
+  
+◪ *ABOUT*
+  │
+  ├─ ❏ ${prefix}info
+  ├─ ❏ ${prefix}snk
+  ├─ ❏ ${prefix}lpr 
+  ├─ ❏ ${prefix}request
+  ├─ ❏ ${prefix}blocklist
+  ├─ ❏ ${prefix}ping
+  ├─ ❏ ${prefix}buypremium
+  ├─ ❏ ${prefix}hargaprem
+  ├─ ❏ ${prefix}menupict
+  ├─ ❏ ${prefix}menuowner
+  │
+  │◪ *LIST OF MENU SHIZUKA*
+  │
+  ├─ ❏ ${prefix}nsfwloli
+  ├─ ❏ ${prefix}asupan
+  ├─ ❏ ${prefix}wiki
+  ├─ ❏ ${prefix}spamcall
+  ├─ ❏ ${prefix}tebakgambar
+  ├─ ❏ ${prefix}babi
+  ├─ ❏ ${prefix}caklontong
+  ├─ ❏ ${prefix}katailham
+  ├─ ❏ ${prefix}katabijak
+  ├─ ❏ ${prefix}fakta
+  ├─ ❏ ${prefix}mimpi
+  ├─ ❏ ${prefix}husbu
+  ├─ ❏ ${prefix}imagemountain
+  ├─ ❏ ${prefix}loli
+  ├─ ❏ ${prefix}imagegame
+  ├─ ❏ ${prefix}imagecyberspace
+  ├─ ❏ ${prefix}imageislamic
+  ├─ ❏ ${prefix}blackpink
+  ├─ ❏ ${prefix}randomexo
+  ├─ ❏ ${prefix}randombts
+  ├─❏ ${prefix}menuownerwaifu
+  │
+  │◪ *OWNER*
+  │
+  ├─ ❏ ${prefix}setprefix
+  ├─ ❏ ${prefix}setreply
+  ├─ ❏ ${prefix}setppbot
+  ├─ ❏ ${prefix}block
+  ├─ ❏ ${prefix}unblock
+  ├─ ❏ ${prefix}setprefix
+  ├─ ❏ ${prefix}leave
+  ├─ ❏ ${prefix}kickall
+  ├─ ❏ ${prefix}event [1/0]
+  ├─ ❏ ${prefix}bc
+  ├─ ❏ ${prefix}bcgc
+  ├─ ❏ ${prefix}clone
+  ├─ ❏ ${prefix}clearall
+  │
+  │◪ *OTHER*
+  │
+  ├─ ❏ ${prefix}wame
+  ├─ ❏ ${prefix}qrcode
+  └─ ❏ ${prefix}afk
+  
+◪ *Powered By Ilham_Net*`
+                    death.sendMessage(from, en, image{ quoted: net, caption: zet })
+					break
 case 'donasi':
 case 'donate':
 					 // Update By Ilham_Net				
