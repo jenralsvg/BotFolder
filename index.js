@@ -19,6 +19,30 @@ const {
         processTime,
 } = require("@adiwajshing/baileys")
 const moment = require("moment-timezone")
+const qrcode = require("qrcode-terminal") 
+const fs = require("fs") 
+const crypto = require('crypto')
+const util = require('util')
+const imageToBase64 = require('image-to-base64')
+const axios = require('axios')
+const { color, bgcolor } = require('./lib/color')
+const { bahasa } = require('./lib/bahasa')
+const { negara } = require('./lib/kodenegara')
+const { donasi } = require('./lib/donasi')
+const { developer } = require('./lib/developer')
+const { randompict } = require('./lib/randompict')
+const { fetchJson } = require('./lib/fetcher')
+const { recognize } = require('./lib/ocr')
+const fontPath = ('./lib/Zahraaa.ttf')
+const path = require('path')
+const { exec, spawn } = require("child_process")
+const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
+const tiktod = require('tiktok-scraper')
+const brainly = require('brainly-scraper')
+const ffmpeg = require('fluent-ffmpeg')
+const cd = 4.32e+7
+const { removeBackgroundFromImageFile } = require('remove.bg')
+const { ind } = require('./language')
 
 /********** MENU SETTING **********/
 const vcard = 'BEGIN:VCARD\n' 
