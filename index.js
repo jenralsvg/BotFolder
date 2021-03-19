@@ -3,6 +3,22 @@
 // ]> Yang Penting Kelen Bahagia [ ilham-Net ]
 // Jika Di Ubah
 // Note : Kalo Error Jangan Salahkan Saya..
+const {
+        WAConnection,
+        MessageType,
+        Presence,
+        MessageOptions,
+        Mimetype,
+        WALocationMessage,
+        WA_MESSAGE_STUB_TYPES,
+        ReconnectMode,
+        ProxyAgent,
+        GroupSettingChange,
+        waChatKey,
+        mentionedJid,
+        processTime,
+} = require("@adiwajshing/baileys")
+const moment = require("moment-timezone")
 
 /********** MENU SETTING **********/
 const vcard = 'BEGIN:VCARD\n' 
