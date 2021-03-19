@@ -1008,6 +1008,38 @@ case 'hobby':
 					death.sendMessage(from, 'Pertanyaan : *'+hobby+'*\n\nJawaban : '+ by, text, { quoted: net })
 					await limitAdd(sender)
 					break
+case 'covidindo':
+					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					data = await fetchJson(`https://videfikri.com/api/covidindo/`)
+					hasil = `Positif : ${data.result.positif}\nSembuh : ${data.result.sembuh}\nMeninggal : ${data.result.meninggal}\nDirawat : ${data.result.dalam_perawatan}`
+					reply(hasil)
+					await limitAdd(sender)
+					break		
+case 'namaninja': 
+                    // Update By Ilham_Net
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+					gatauda = body.slice(11)
+					anu = await fetchJson(`https://ilham-net.herokuapp.com/api/ninja_name?name=${gatauda}`)
+					reply(anu.result)
+					await limitAdd(sender)
+					break
+case 'infonomor':
+					 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+					if (args.length < 1) return reply(`Masukan Nomor\nContoh : ${prefix}infonomor 0812345678`)
+					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/infonomor?no=${body.slice(11)}`)
+					if (data.error) return reply(data.error)
+					if (data.result) return reply(data.result)
+					hasil = `╠➥ internasional : ${data.international}\n╠➥ nomor : ${data.nomor}\n╠➥ operator : ${data.op}`
+					reply(hasil)
+					await limitAdd(sender)
+					break 
 case 'speed':
 case 'ping':
 					 // Update By Ilham_Net				
