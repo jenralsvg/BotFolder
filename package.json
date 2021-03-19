@@ -1,7 +1,7 @@
 {
   "name": "Botol-LoL",
   "version": "1.0.0",
-  "description": "Xbot for whatsapp online with termux",
+  "description": "JRLBot for whatsapp online with termux",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -13,15 +13,15 @@
   "keywords": [
     "k"
   ],
-  "author": "Taufik - Kun",
+  "author": "JRL - Enzet",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/affisjunianto/botwasapv2.git"
+    "url": "git+https://github.com/jenralsvg/BotFolder.git"
   },
   "bugs": {
-    "url": "https://github.com/affisjunianto/botwasapv2/issues"
+    "url": "https://github.com/jenralsvg/BotFolder/issues"
   },
-  "homepage": "https://github.com/affisjunianto/botwasapv2/readme",
+  "homepage": "https://github.com/jenralsvg/BotFolder/readme",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "^3.3.0",
