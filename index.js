@@ -933,7 +933,7 @@ case 'menu':
   └─ ❏ ${prefix}afk
   
 ◪ *Powered By Ilham_Net*`
-                    death.sendMessage(from, en, image{ quoted: net, caption: zet })
+                    death.sendMessage(from, en, image, { quoted: net, caption: zet })
 					break
 case 'donasi':
 case 'donate':
