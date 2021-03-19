@@ -877,16 +877,14 @@ case 'menu':
   
 ◪ *ABOUT*
   │
-  ├─ ❏ ${prefix}info
-  ├─ ❏ ${prefix}snk
-  ├─ ❏ ${prefix}lpr 
-  ├─ ❏ ${prefix}request
-  ├─ ❏ ${prefix}blocklist
-  ├─ ❏ ${prefix}ping
-  ├─ ❏ ${prefix}buypremium
-  ├─ ❏ ${prefix}hargaprem
-  ├─ ❏ ${prefix}menupict
-  ├─ ❏ ${prefix}menuowner
+  ├─ ❏ ${prefix}Info
+  ├─ ❏ ${prefix}Snk
+  ├─ ❏ ${prefix}Lpr 
+  ├─ ❏ ${prefix}Request
+  ├─ ❏ ${prefix}Blocklist
+  ├─ ❏ ${prefix}Ping
+  ├─ ❏ ${prefix}MenuPicture
+  ├─ ❏ ${prefix}MenuDeveloper
   │
   │◪ *LIST OF MENU SHIZUKA*
   │
