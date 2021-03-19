@@ -1982,3 +1982,28 @@ case 'quran':
 					death.sendMessage(from, quran, text, {quoted: net})
 					await limitAdd(sender)
 					break		
+/*
+> Powered By Ilham_Net
+Thanks To Temanku
+> Ferdiz
+> Zhirr
+> Hadi
+*/
+		  default:
+			if (body.startsWith(`${prefix}${command}`)) {
+
+                  reply(`Maaf *${pushname}*, Command *${prefix}${command}* Tidak Terdaftar Di Dalam *${prefix}menu*!`)
+
+                  }
+			if (isGroup && !isCmd && isSimi && budy != undefined) {
+						console.log(budy)
+						muehe = await simih(budy)
+						reply(ind.cmdnf(prefix, command))
+					} else {
+						console.log(color('[ERROR]','red'), 'Unregistered Command from', color(sender.split('@')[0]))
+					}
+					}
+		} catch (e) {
+			console.log('Error : %s', color(e, 'red'))
+		}
+	})
