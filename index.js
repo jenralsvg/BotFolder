@@ -1222,7 +1222,8 @@ case 'katailham':
 				ilham = body.slice(1)
 				const hom =['Keadilan sosial hanya berlaku bagi seluruh warga negara yang good looking.','Nggak ada yang peduli denganmu di sosmed kecuali kamu cakep.','Dia hanya menghargaimu, bukan mencintaimu.','Dia cuman bercanda, harusnya kamu tertawa, bukan malah jatuh cinta.','Ilmu pengetahuan tanpa agama adalah pincang.','Hidup itu seperti sebuah sepeda, agar tetap seimbang kita harus tetap bergerak.','Sesuatu akan terasa berharga jika sudah kehilangan.','Dia gak jahat, bapermu aja yang salah tempat.',' Mencintaimu adalah seni menyakiti diri.']
 				const ham = hom[Math.floor(Math.random() * hom.length)]
-				death.sendMessage(from, ''+ham+'\n\n_~ Kata Ilham_', text, { quoted: net })
+                                ilham = await getBuffer(`https://i.ibb.co/v4BLb6y/23298305-designstyle-grunge-m.png`)
+				death.sendMessage(from, ilham, image, { quoted: net, caption: '- Kata Ilham\n\n'+ ham })
 				await limitAdd(sender)
 				break
 //Daftar
