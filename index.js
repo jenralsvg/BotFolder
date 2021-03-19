@@ -2191,7 +2191,16 @@ case 'quran':
 					death.sendMessage(from, quran, text, {quoted: net})
 					await limitAdd(sender)
 					break
-
+case 'jadwalsholat':
+		  // update by Ilham_Net
+		  if (!isRegistered) return reply( ind.noregis())
+		  if (isLimit(sender)) return reply(ind.limitend(pusname))
+		  if (isBanned) return reply('Maaf Kamu Sudah Terbanned!')
+		  anu = await fetchJson(`https://zahirr-web.herokuapp.com/api/jadwalshalat?kota=${body.slice(14)}&apikey=zahirgans`, {method: 'get'})
+		  sholat = `Tanggal : ${anu.result.tanggal}\nAshar : ${anu.result.ashr}\nDzuhur : ${anu.result.dzuhur}\nMaghrib : ${anu.result.magrib}\nIsya : ${anu.result.isya}\nShubuh : ${anu.result.shubuh}\nImsyak : ${anu.result.imsyak}`
+		  death.sendMessage(from, sholat, text, {quoted: net})
+		  await limitAdd(sender)
+		  break
 /*
 > Powered By Ilham_Net
 Thanks To Temanku
