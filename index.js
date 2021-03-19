@@ -1412,6 +1412,22 @@ case 'hobby':
 					death.sendMessage(from, 'Pertanyaan : *'+hobby+'*\n\nJawaban : '+ by, text, { quoted: net })
 					await limitAdd(sender)
 					break
+case 'play':   
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				reply(ind.wait())
+				play = body.slice(5)
+				anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/yt-play?q=${play}`)
+				if (anu.error) return reply(anu.error)
+				infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${anu.result.title}\nChannel : ${anu.result.channel}\nDurasi : ${anu.result.duration}\nUkuran : ${anu.result.filesize}\nTotal Viewrs : ${anu.result.total_view}\n\n*Tunggu Sebentar Lagi Prosses Pengiriman Audio Boss*`
+				buffer = await getBuffer(anu.result.thumb)
+				death.sendMessage(from, buffer, image, {quoted: net, caption: infomp3})
+				lagu = await getBuffer(anu.result.link)
+				death.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: net})
+				await limitAdd(sender)
+				break
 case 'covidindo':
 					 // Update By Ilham_Net				
                  if (!isRegistered) return reply( ind.noregis())
