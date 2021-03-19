@@ -815,11 +815,23 @@ case 'glitch': // Update By Ilham_Net
 				ll1 = ct.split("|")[0];
                                 ll2 = ct.split("|")[1];
 				reply(ind.wait())
-				anu = await fetchJson(`https://zahirr-web.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&theme=glitch&apikey=zahirgans`)
-				buffer = await getBuffer(anu.result.url)
-				death.sendMessage(from, buffer, image, {quoted: net, caption: 'Nih hasilnya kak...'})
+                                zhirr = await fetchJson(`https://zahirr-web.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&theme=glitch&apikey=zahirgans`)
+                                zahir = await getBuffer(zhirr.result.url)
+				death.sendMessage(from, zahir, image, {quoted: net, caption: 'Nih hasilnya kak...'})
 				await limitAdd(sender)
 				break
+case 'textflower':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				if (args.length < 1) return reply(ind.wrongf())
+				zahir = body.slice(12)
+				reply(ind.wait())
+				zhirr = await getBuffer(`https://zahirr-web.herokuapp.com/api/textmaker/alam?text=${zahir}&theme=flower&apikey=zahirgans`)
+				death.sendMessage(from, zhirr, image, {caption: 'Nih kak', quoted: net})
+				await limitAdd(sender)
+				break 
 case 'textcup':
 				 // Update By Ilham_Net				
                  if (!isRegistered) return reply( ind.noregis())
