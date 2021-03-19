@@ -1,10 +1,8 @@
-/* 
- ]>> Cinta Oh Cinta <<[
- ]> Ubah Aja Nda Papa <[
- ]> Yang Penting Kelen Bahagia [ ilham-Net²⁰³ ]
- */
- // Jika Di Ubah
- // Note : Kalo Error Jangan Salahkan Saya...
+// ]>> Cinta Oh Cinta <<[
+// ]> Ubah Aja Nda Papa <[
+// ]> Yang Penting Kelen Bahagia [ ilham-Net²⁰³ ]
+// Jika Di Ubah
+// Note : Kalo Error Jangan Salahkan Saya...
  const {
    WAConnection,
    MessageType,
