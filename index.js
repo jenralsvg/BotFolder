@@ -1035,14 +1035,14 @@ case 'info':
 					me = death.user
 					uptime = process.uptime()
 					teks = `*INFO OWNER*\n*Owner bot* : Ilham_Net\n*No Owner* : wa.me/6285757196481\n━━━━━━━━━━━━━━━━━━━━\n*INFO BOT*\n*Nama bot* : ${me.name}\n*Nomor bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total block contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}\n*Ketik* : ${prefix}lpr _Untuk melaporkan kepada admin bug bot_\n*Ketik* : ${prefix}developer untuk menghubungi admin bot kami.`
-					buffer = await getBuffer(`https://i.ibb.co/LZNvTC1/36d5d64d9774.jpg`)
+					buffer = await getBuffer(`https://i.ibb.co/ThCT9cV/images-1.jpg`)
 					death.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
 case 'snk':
 					me = death.user
 					uptime = process.uptime()
 					teks = `*Syarat & Ketentuan JRL Enzet BOT*\n1. Teks dan nama pengguna WhatsApp anda kami simpan di dalam server selama bot aktif.\n2. Data anda akan di hapus ketika bot offline.\n3. Kami tidak menyimpan gambar, video, file, audio, dan dokumen yang anda kirim.\n4. Kami tidak pernah meminta anda untuk memberikan informasi pribadi.\n5. Jika menemukan Bug/Error silahkan langsung lapor ke Owner bot.\n6. Cukup perintah 1x jika bot tidak merespon harap ulangi kembali, Jika di ulangi kembali tidak merespon, Bot tidak aktif\n7. Dilarang spam, Share virus virtex, Telpon, Video call, Kami akan blockir anda.\n8. Apapun yang anda perintah pada bot ini, *KAMI TIDAK BERTANGGUNG JAWAB!*\n\nTERIMA KASIH !~`
-					buffer = await getBuffer(`https://i.ibb.co/LZNvTC1/36d5d64d9774.jpg`)
+					buffer = await getBuffer(`https://i.ibb.co/ThCT9cV/images-1.jpg`)
 					death.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
 case 'lpr':
