@@ -812,9 +812,21 @@ case 'textcup':
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 				if (isBanned) return reply('Maaf kamu sudah terbenned!')
 				if (args.length < 1) return reply(ind.wrongf())
-				mrhadi = body.slice(11)
+				mrhadi = body.slice(9)
 				reply(ind.wait())
 				hadi = await getBuffer(`http://hadi-api.herokuapp.com/api/photoxy/teks-cup?teks=${mrhadi}`)
+				death.sendMessage(from, hadi, image, {caption: 'Nih kak', quoted: net})
+				await limitAdd(sender)
+				break 
+case 'textcup2':
+				 // Update By Ilham_Net				
+                 if (!isRegistered) return reply( ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+				if (args.length < 1) return reply(ind.wrongf())
+				mrhadi = body.slice(10)
+				reply(ind.wait())
+				hadi = await getBuffer(`http://hadi-api.herokuapp.com/api/photoxy/funny-cup?teks=${mrhadi}`)
 				death.sendMessage(from, hadi, image, {caption: 'Nih kak', quoted: net})
 				await limitAdd(sender)
 				break 
